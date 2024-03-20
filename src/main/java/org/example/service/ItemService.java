@@ -6,6 +6,7 @@ import org.example.request.ItemRequest;
 import org.example.service.IItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+@Service
 public class ItemService implements IItemService{
     @Autowired
     private IItemRepository itemRepository;
@@ -22,17 +23,16 @@ public class ItemService implements IItemService{
 
     @Override
     public ItemEntity getItemById(Long id) {
-        return null;
+        return itemRepository.findById(id).orElseThrow();
     }
 
     @Override
     public ItemEntity updateItem(Long id, ItemRequest userRequest) {
-        return itemRepository.findById(id).orElseThrow();
+        return null ;
     }
 
     @Override
     public void deleteItemById(Long id) {
        itemRepository.deleteById(id);
-
     }
 }

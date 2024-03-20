@@ -15,13 +15,13 @@ public class ItemController {
     @Autowired
     private IItemService IItemService;
 
-    @PostMapping("/product")
-    public ItemEntity saveUser(@RequestBody ItemRequest request) {
+    @PostMapping("/item")
+    public ItemEntity saveItem(@RequestBody ItemRequest request) {
         return IItemService.saveItem(request);
     }
 
-    @GetMapping("/product/{id}")
-    public ItemEntity getUser(@PathVariable("id") Long id) {
+    @GetMapping("/item/{id}")
+    public ItemEntity getItem(@PathVariable("id") Long id) {
         return IItemService.getItemById(id);
     }
 }
