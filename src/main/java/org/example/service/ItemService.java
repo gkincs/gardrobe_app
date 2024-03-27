@@ -1,6 +1,8 @@
 package org.example.service;
 
+import lombok.SneakyThrows;
 import org.example.entity.ItemEntity;
+import org.example.exception.ItemNotFoundException;
 import org.example.repository.IItemRepository;
 import org.example.request.ItemRequest;
 import org.example.service.IItemService;
@@ -22,13 +24,18 @@ public class ItemService implements IItemService{
     }
 
     @Override
+    @SneakyThrows
     public ItemEntity getItemById(Long id) {
-        return itemRepository.findById(id).orElseThrow();
+        return itemRepository.findById(id).orElseThrow(ItemNotFoundException::new);
     }
 
     @Override
+    @SneakyThrows
     public ItemEntity updateItem(Long id, ItemRequest userRequest) {
-        return null ;
+        ItemEntity itemEntity = itemRepository.findById(id).orElseThrow(ItemNotFoundException::new);
+        itemEntity.setName(userRequest.getName());
+        itemEntity.setTakeOutDate(userRequest.getTakeOutDate());
+        return itemRepository.save(itemEntity);
     }
 
     @Override
