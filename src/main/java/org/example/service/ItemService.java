@@ -8,8 +8,13 @@ import org.example.request.ItemRequest;
 import org.example.service.IItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+/**
+ * Az új elemek létrehozása, lekérdezése, frissítése és törlése.
+ * A megfelelő adatelérési réteggel (IItemRepository) való kommunikációért felelős.
+ */
 @Service
-public class ItemService implements IItemService{
+public class ItemService implements IItemService {
     @Autowired
     private IItemRepository itemRepository;
 

@@ -1,5 +1,8 @@
 package org.example.request;
 
+import java.time.LocalDate;
+import java.util.Date;
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
@@ -10,9 +13,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDate;
-import java.util.Date;
 
+/**
+ * Ez az osztály tartalmazza az Item létrehozásához, vagy frissítéséhez szükséges adatokat.
+ */
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter

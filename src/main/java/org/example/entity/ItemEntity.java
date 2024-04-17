@@ -1,5 +1,7 @@
 package org.example.entity;
 
+import java.time.LocalDate;
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,10 +10,15 @@ import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PositiveOrZero;
-import lombok.*;
-import org.springframework.format.annotation.DateTimeFormat;
-import java.time.LocalDate;
-import java.util.Date;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+/***
+ *Ez az osztály az Item adattárolásáért és reprezentálásáért felelős az adatbázisban.
+ */
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
