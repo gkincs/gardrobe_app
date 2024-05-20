@@ -1,8 +1,11 @@
 package org.example.repository;
 
+import java.util.List;
+
 import org.example.entity.ItemEntity;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
+
 
 /***
  *Ez az interfész definiálja a szükséges adatelérési műveleteket az Item-ekkel kapcsolatosan,
@@ -10,4 +13,5 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface IItemRepository extends CrudRepository<ItemEntity, Long> {
+    List<ItemEntity> findFirstByOrderByDateOfWashAsc();
 }

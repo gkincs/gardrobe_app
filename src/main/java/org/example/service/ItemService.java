@@ -1,5 +1,7 @@
 package org.example.service;
 
+import java.util.List;
+
 import lombok.SneakyThrows;
 import org.example.entity.ItemEntity;
 import org.example.exception.ItemNotFoundException;
@@ -46,5 +48,10 @@ public class ItemService implements IItemService {
     @Override
     public void deleteItemById(Long id) {
        itemRepository.deleteById(id);
+    }
+
+    @Override
+    public List<ItemEntity> findFirstByOrderByDateOfWashAsc() {
+        return itemRepository.findFirstByOrderByDateOfWashAsc();
     }
 }

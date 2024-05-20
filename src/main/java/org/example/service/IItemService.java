@@ -1,5 +1,7 @@
 package org.example.service;
 
+import java.util.List;
+
 import org.example.entity.ItemEntity;
 import org.example.request.ItemRequest;
 
@@ -16,4 +18,6 @@ public interface IItemService {
     ItemEntity updateItem(Long id, ItemRequest userRequest);
 
     void deleteItemById(Long id);
+
+    List<ItemEntity> findFirstByOrderByDateOfWashAsc();
 }

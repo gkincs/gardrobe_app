@@ -1,5 +1,7 @@
 package org.example.controller;
 
+import java.util.List;
+
 import jakarta.validation.Valid;
 import org.example.entity.ItemEntity;
 import org.example.request.ItemRequest;
@@ -43,5 +45,10 @@ public class ItemController {
     @DeleteMapping("/item/{id}")
     public void delItem(@PathVariable("id") Long id) {
         itemService.deleteItemById(id);
+    }
+
+    @GetMapping("/item/oldest_wash")
+    public List<ItemEntity> findFirstByOrderByDateOfWashAsc() {
+        return itemService.findFirstByOrderByDateOfWashAsc();
     }
 }
